@@ -17,7 +17,6 @@ export class Page1 {
   }
 
   adicionar() {
-      console.log("cheguei auqi");
       this.lista.push({
         desc: this.descricao,
         priori: this.prioridade,
@@ -26,7 +25,7 @@ export class Page1 {
       btnRemove.disabled = false;
 
       this.lista.sort((taskA, taskB) => {
-        if (taskA.priori < +taskB.priori || taskA.priori == +taskB.priori) return -1;
+        if (taskA.priori < taskB.priori || taskA.priori == taskB.priori) return -1;
         return 1;
       });
 
@@ -35,7 +34,11 @@ export class Page1 {
   }
 
   remover() {
-
+    this.lista.shift();
+    if ( this.lista.length == 0) {
+      var btnRemove = <HTMLButtonElement>document.getElementById('buttonRemover');
+      btnRemove.disabled = true;
+    }
   }
 
   tarefa(i) {
