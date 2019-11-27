@@ -10,7 +10,7 @@
 <ion-content padding>
   <ion-item>
       <ion-label>Descrição</ion-label>
-      <ion-input id="editDescricao" [(ngModel)]="descricao" ></ion-input>
+      <ion-input id="editDescricao" type="text" [(ngModel)]="descricao" ></ion-input>
   </ion-item>
   <ion-item>
     <ion-label>Prioridade</ion-label>
@@ -19,12 +19,12 @@
   <button id="buttonRemover" disabled=true ion-button secondary (click)="remover()">Remover 1°</button>
   <button id="buttonAdicionar" ion-button secondary (click)="adicionar()">Adicionar</button>
   <ion-list id="listView">
-      <ion-item ion-item *ngFor="let item of items let i= index" (click)="tarefa(i)">
+      <ion-item ion-item *ngFor="let item of lista let i= index" (click)="tarefa(i)">
           <div>
-              {{item["descricao"]}}
+              {{item["desc"]}}
           </div>
           <div>
-              Prioridade: {{item["prioridade"]}}
+              Prioridade: {{item["priori"]}}
           </div>
       </ion-item>
   </ion-list>
