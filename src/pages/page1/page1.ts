@@ -68,8 +68,13 @@ export class Page1 {
     }
     return true;
   }
-  tarefa(i) {
-    
+
+  removeTarefa(i) {
+    this.lista.splice(i,1);
+    if ( this.lista.length == 0) {
+      var btnRemove = <HTMLButtonElement>document.getElementById('buttonRemover');
+      btnRemove.disabled = true;
+    }
   }
 
 }

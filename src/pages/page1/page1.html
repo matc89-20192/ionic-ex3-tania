@@ -19,7 +19,7 @@
   <button id="buttonRemover" disabled=true ion-button secondary (click)="remover()">Remover 1°</button>
   <button id="buttonAdicionar" ion-button secondary (click)="adicionar()">Adicionar</button>
   <ion-list id="listView">
-      <ion-item ion-item *ngFor="let item of lista let i= index" (click)="tarefa(i)">
+      <ion-item ion-item *ngFor="let item of lista let i= index" (click)="removeTarefa(i)">
           <div>
               {{item["desc"]}}
           </div>
